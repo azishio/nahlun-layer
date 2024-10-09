@@ -1,0 +1,22 @@
+{
+	"name": "@scope-name/nahlun-layer",
+	"version": "0.0.1",
+	"description": "deck.gl layer for nahlun",
+	"main": "dist/index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/azishio/nahlun-layer.git"
+	},
+	"author": "azishio",
+	"license": "MIT",
+	"private": false,
+	"files": ["dist"],
+	"scripts": {
+		"build": "tsc",
+		"prepublishOnly": "npm run build"
+	},
+	"bugs": {
+		"url": "https://github.com/azishio/nahlun-layer/issues"
+	},
+	"homepage": "https://github.com/azishio/nahlun-layer#readme"
+}
