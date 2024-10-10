@@ -1,5 +1,5 @@
 {
-	"name": "@scope-name/nahlun-layer",
+	"name": "@azishio/nahlun-layer",
 	"version": "0.0.1",
 	"type": "module",
 	"description": "deck.gl layer for nahlun",
@@ -11,9 +11,7 @@
 	"author": "azishio",
 	"license": "MIT",
 	"private": false,
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"scripts": {
 		"build": "tsc",
 		"prepublishOnly": "npm run build"
