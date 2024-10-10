@@ -4,6 +4,7 @@
 	"type": "module",
 	"description": "deck.gl layer for nahlun",
 	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/azishio/nahlun-layer.git"
