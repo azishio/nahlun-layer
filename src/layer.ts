@@ -2,6 +2,7 @@ import {
 	CompositeLayer,
 	type LayersList,
 	ScenegraphLayer,
+	SolidPolygonLayer,
 	TileLayer,
 } from "deck.gl";
 import type { NahlunLayerData } from "./data.js";
@@ -33,6 +34,26 @@ export class NahlunLayer extends CompositeLayer {
 						getOrientation: (_) => [0, 0, 90],
 						_animations: null,
 						pickable: false,
+					});
+				},
+			}),
+			new TileLayer({
+				...this.getSubLayerProps({
+					id: "WaterSurface",
+					maxZoom: 15,
+					minZoom: 15,
+				}),
+				renderSubLayers: (props) => {
+					const { x, y, z } = props.tile.index;
+
+					const host = (this.props.data as NahlunLayerData).dataHost;
+					const datetime = (this.props.data as NahlunLayerData).lastUpdate;
+
+					return new SolidPolygonLayer(props, {
+						id: `water-surface-${x}-${y}-${z}`,
+						data: `${host}/tiles/water/${z}/${x}/${y}?datetime=${datetime}`,
+						getPolygon: (d) => d,
+						getFillColor: [61, 154, 193, 50],
 					});
 				},
 			}),
